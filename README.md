@@ -6,13 +6,14 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 
 ## The language
 
-- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels, arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, file I/O, JSON).
+- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels, arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking + native TLS, file I/O, JSON).
 
 ## Apps & tools
 
 - **[boilerplate-cli-ui-machin](https://github.com/javimosch/boilerplate-cli-ui-machin)** — a single-binary CLI serving an embedded React web UI + JSON API, with a background daemon via the C FFI. The machin entry in the [SuperCLI](https://github.com/javimosch) boilerplate family (smallest binary at ~27 KB).
 - **[machin-healthcheck](https://github.com/javimosch/machin-healthcheck)** — a concurrent HTTP status/latency checker. One goroutine per URL, results over a channel. Drove `dial`/`now_ms`/`parse_int` into machin.
 - **[machin-ssg](https://github.com/javimosch/machin-ssg)** — a static-site generator (markdown subset → HTML). Drove native file I/O and a parser fix into machin.
+- **[machin-fetch](https://github.com/javimosch/machin-fetch)** — a tiny HTTPS client CLI (a pocket `curl` for `https://`). GET/POST, single binary. Drove **native TLS** (`https_get`/`https_post`, OpenSSL) into machin.
 
 ## In the machin repo
 
