@@ -6,7 +6,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 
 ## The language
 
-- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels/`select`, arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, native TLS + WebSocket, file I/O, JSON + jq-style path queries, `(value, err)` error handling).
+- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels (`select`, `close`, range), arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, native TLS + WebSocket, file I/O, JSON + jq-style path queries, `(value, err)` error handling).
 
 ## Apps & tools
 
@@ -18,6 +18,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-linkcheck](https://github.com/javimosch/machin-linkcheck)** — a concurrent link checker that classifies each URL (OK / 4xx / 5xx / unreachable) and exits non-zero on broken links. Drove **error handling** into machin: `http_get` returning `(status, body, err)` plus `exit`.
 - **[machin-jq](https://github.com/javimosch/machin-jq)** — a tiny `jq`-style JSON path query CLI (`.a.b[0].name`). Pairs with machin-fetch for a native HTTPS→query pipeline. Drove a **JSON path engine** (`json_get`) into machin.
 - **[machin-pool](https://github.com/javimosch/machin-pool)** — a bounded-concurrency URL checker: a fixed worker pool racing results against an overall deadline. Drove **`select`** (multi-way channel waits, timeouts) into machin.
+- **[machin-pipe](https://github.com/javimosch/machin-pipe)** — a streaming parallel fetch pipeline: producer → workers → fan-in, each stage terminating by closing its channel. Drove **channel `close`** + range-over-channel into machin.
 
 ## In the machin repo
 
