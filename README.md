@@ -6,7 +6,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 
 ## The language
 
-- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels, arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, native TLS + WebSocket, file I/O, JSON, `(value, err)` error handling).
+- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels, arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, native TLS + WebSocket, file I/O, JSON + jq-style path queries, `(value, err)` error handling).
 
 ## Apps & tools
 
@@ -16,6 +16,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-fetch](https://github.com/javimosch/machin-fetch)** — a tiny HTTPS client CLI (a pocket `curl` for `https://`). GET/POST, single binary. Drove **native TLS** (`https_get`/`https_post`, OpenSSL) into machin.
 - **[machin-wscat](https://github.com/javimosch/machin-wscat)** — a tiny duplex WebSocket (`wss://`) client CLI (a pocket `websocat`). Stdin → send, recv → stdout. Drove a **native WebSocket client** (`wss_open`/`send`/`recv`/`close`, RFC 6455 over TLS) into machin.
 - **[machin-linkcheck](https://github.com/javimosch/machin-linkcheck)** — a concurrent link checker that classifies each URL (OK / 4xx / 5xx / unreachable) and exits non-zero on broken links. Drove **error handling** into machin: `http_get` returning `(status, body, err)` plus `exit`.
+- **[machin-jq](https://github.com/javimosch/machin-jq)** — a tiny `jq`-style JSON path query CLI (`.a.b[0].name`). Pairs with machin-fetch for a native HTTPS→query pipeline. Drove a **JSON path engine** (`json_get`) into machin.
 
 ## In the machin repo
 
