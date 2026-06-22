@@ -6,7 +6,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 
 ## The language
 
-- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels, arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking + native TLS, file I/O, JSON).
+- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels, arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, native TLS + WebSocket, file I/O, JSON).
 
 ## Apps & tools
 
@@ -14,6 +14,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-healthcheck](https://github.com/javimosch/machin-healthcheck)** — a concurrent HTTP status/latency checker. One goroutine per URL, results over a channel. Drove `dial`/`now_ms`/`parse_int` into machin.
 - **[machin-ssg](https://github.com/javimosch/machin-ssg)** — a static-site generator (markdown subset → HTML). Drove native file I/O and a parser fix into machin.
 - **[machin-fetch](https://github.com/javimosch/machin-fetch)** — a tiny HTTPS client CLI (a pocket `curl` for `https://`). GET/POST, single binary. Drove **native TLS** (`https_get`/`https_post`, OpenSSL) into machin.
+- **[machin-wscat](https://github.com/javimosch/machin-wscat)** — a tiny duplex WebSocket (`wss://`) client CLI (a pocket `websocat`). Stdin → send, recv → stdout. Drove a **native WebSocket client** (`wss_open`/`send`/`recv`/`close`, RFC 6455 over TLS) into machin.
 
 ## In the machin repo
 
