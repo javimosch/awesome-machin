@@ -20,10 +20,11 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-pool](https://github.com/javimosch/machin-pool)** — a bounded-concurrency URL checker: a fixed worker pool racing results against an overall deadline. Drove **`select`** (multi-way channel waits, timeouts) into machin.
 - **[machin-pipe](https://github.com/javimosch/machin-pipe)** — a streaming parallel fetch pipeline: producer → workers → fan-in, each stage terminating by closing its channel. Drove **channel `close`** + range-over-channel into machin.
 - **[machin-batch](https://github.com/javimosch/machin-batch)** — groups a line stream into JSON-array chunks by size or by timer (flushing the rest on EOF). Its `select` over input + ticker drove the **comma-ok receive** (`v, ok := <-ch`) into machin.
+- **[machin-http](https://github.com/javimosch/machin-http)** — a multi-command HTTPS client (`get`/`post`/`head`) with short+long flags and auto `--help`. Drove a reusable **flag parser** (`framework/flags.src`) into machin.
 
 ## In the machin repo
 
-- **[`framework/`](https://github.com/javimosch/machin/tree/main/framework)** — `machweb`, a web framework written in MFL (router, response builders, JSON).
+- **[`framework/`](https://github.com/javimosch/machin/tree/main/framework)** — reusable MFL modules: `machweb` (a web framework — router, response builders, JSON) and `flags.src` (a CLI flag parser), each composed ahead of your app with `machin encode`.
 - **[`examples/`](https://github.com/javimosch/machin/tree/main/examples)** — runnable programs: a raylib **GUI** game menu, JSON-over-HTTP servers, generics, concurrency, FFI, and more.
 
 ## Why these exist
