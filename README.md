@@ -26,6 +26,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-hmac](https://github.com/javimosch/machin-hmac)** — compute/verify HMAC-SHA256 (or SHA-256) signatures — webhook verification (GitHub/Stripe). Drove **hash** builtins (`sha256`/`hmac_sha256`) into machin.
 - **[machin-wc](https://github.com/javimosch/machin-wc)** — a `wc` clone (lines/words/bytes), matching coreutils. Drove **`read_stdin`** (slurp stdin verbatim) into machin.
 - **[machin-kv](https://github.com/javimosch/machin-kv)** — a persistent key-value store (set/get/del/list), data surviving across runs. Drove **SQLite** builtins (`sqlite_open`/`exec`/`query`/`close`) into machin.
+- **[machin-cron](https://github.com/javimosch/machin-cron)** — a cron-expression evaluator: prints the next N times a crontab line fires. Drove **`time_fields`** (decompose a Unix timestamp into calendar fields) into machin.
 
 ## In the machin repo
 
