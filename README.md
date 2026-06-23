@@ -6,7 +6,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 
 ## The language
 
-- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels (`select`, `close`, range, comma-ok), arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, native TLS + WebSocket, file I/O, JSON + jq-style path queries, regex, `(value, err)` error handling).
+- **[machin](https://github.com/javimosch/machin)** — the compiler + language (MFL → C → native). Generics, closures, goroutines/channels (`select`, `close`, range, comma-ok), arena GC, C FFI, a `machweb` web framework, and a growing builtin surface (networking, native TLS + WebSocket, file I/O, JSON + jq-style path queries, regex, base64, `(value, err)` error handling).
 
 ## Apps & tools
 
@@ -22,6 +22,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-batch](https://github.com/javimosch/machin-batch)** — groups a line stream into JSON-array chunks by size or by timer (flushing the rest on EOF). Its `select` over input + ticker drove the **comma-ok receive** (`v, ok := <-ch`) into machin.
 - **[machin-http](https://github.com/javimosch/machin-http)** — a multi-command HTTPS client (`get`/`post`/`head`) with short+long flags and auto `--help`. Drove a reusable **flag parser** (`framework/flags.src`) into machin.
 - **[machin-grep](https://github.com/javimosch/machin-grep)** — a regex line matcher (pocket `grep`): match/invert/count/only/line-numbers over a POSIX ERE. Drove **regex** builtins (`regex_match`/`find`/`groups`/`replace`) into machin.
+- **[machin-jwt](https://github.com/javimosch/machin-jwt)** — a JWT decoder: decode header/payload (base64url JSON) and extract a claim. Drove **base64** builtins (`base64_encode`/`base64_decode`) into machin.
 
 ## In the machin repo
 
