@@ -24,6 +24,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-grep](https://github.com/javimosch/machin-grep)** — a regex line matcher (pocket `grep`): match/invert/count/only/line-numbers over a POSIX ERE. Drove **regex** builtins (`regex_match`/`find`/`groups`/`replace`) into machin.
 - **[machin-jwt](https://github.com/javimosch/machin-jwt)** — a JWT decoder: decode header/payload (base64url JSON) and extract a claim. Drove **base64** builtins (`base64_encode`/`base64_decode`) into machin.
 - **[machin-hmac](https://github.com/javimosch/machin-hmac)** — compute/verify HMAC-SHA256 (or SHA-256) signatures — webhook verification (GitHub/Stripe). Drove **hash** builtins (`sha256`/`hmac_sha256`) into machin.
+- **[machin-wc](https://github.com/javimosch/machin-wc)** — a `wc` clone (lines/words/bytes), matching coreutils. Drove **`read_stdin`** (slurp stdin verbatim) into machin.
 
 ## In the machin repo
 
