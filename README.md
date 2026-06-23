@@ -27,6 +27,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-wc](https://github.com/javimosch/machin-wc)** — a `wc` clone (lines/words/bytes), matching coreutils. Drove **`read_stdin`** (slurp stdin verbatim) into machin.
 - **[machin-kv](https://github.com/javimosch/machin-kv)** — a persistent key-value store (set/get/del/list), data surviving across runs. Drove **SQLite** builtins (`sqlite_open`/`exec`/`query`/`close`) into machin.
 - **[machin-cron](https://github.com/javimosch/machin-cron)** — a cron-expression evaluator: prints the next N times a crontab line fires. Drove **`time_fields`** (decompose a Unix timestamp into calendar fields) into machin.
+- **[machin-date](https://github.com/javimosch/machin-date)** — a `date(1)`-style timestamp formatter (output matches GNU `date`). Drove **`time_format`** (strftime over a Unix timestamp) into machin.
 
 ## In the machin repo
 
