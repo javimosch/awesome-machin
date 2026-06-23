@@ -34,6 +34,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-noise](https://github.com/javimosch/machin-noise)** — a [Noise Protocol](https://noiseprotocol.org) **XX handshake** (`Noise_XX_25519_AESGCM_SHA256`, the pattern WhatsApp uses) in pure MFL over the `bytes` + crypto builtins, with a loopback self-test. The transport-encryption layer for a native WhatsApp client.
 - **[machin-wabin](https://github.com/javimosch/machin-wabin)** — the **WhatsApp binary-node (stanza) codec** in pure MFL: token-dictionary compression (from [whatsmeow](https://github.com/tulir/whatsmeow)), nibble/hex packing, the node tree. Encoder output is byte-for-byte WhatsApp-compatible. The stanza-framing layer for a native WhatsApp client.
 - **[machin-signal](https://github.com/javimosch/machin-signal)** — the **Signal Double Ratchet** (X3DH + ratcheting cipher) in pure MFL, key schedule matching [libsignal](https://github.com/tulir/libsignal-protocol-go) exactly, with a loopback self-test. The message-encryption layer for a native WhatsApp client.
+- **[machin-wapair](https://github.com/javimosch/machin-wapair)** — WhatsApp **device-pairing crypto** (the ADV account/device signature exchange) in machin, modeling [whatsmeow](https://github.com/tulir/whatsmeow)'s `pair.go`. Drove **`xeddsa_sign`/`xeddsa_verify`** (Curve25519 XEdDSA signatures) into machin.
 
 ## In the machin repo
 
