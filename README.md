@@ -36,6 +36,22 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-signal](https://github.com/javimosch/machin-signal)** — the **Signal Double Ratchet** (X3DH + ratcheting cipher) in pure MFL, key schedule matching [libsignal](https://github.com/tulir/libsignal-protocol-go) exactly, with a loopback self-test. The message-encryption layer for a native WhatsApp client.
 - **[machin-wapair](https://github.com/javimosch/machin-wapair)** — WhatsApp **device-pairing crypto** (the ADV account/device signature exchange) in machin, modeling [whatsmeow](https://github.com/tulir/whatsmeow)'s `pair.go`. Drove **`xeddsa_sign`/`xeddsa_verify`** (Curve25519 XEdDSA signatures) into machin.
 
+## Case study: a native WhatsApp client stack
+
+The most demanding dogfood: building **every cryptographic and wire-format layer of WhatsApp natively in machin** — a goal that looked impossible for a young language with no bignum, no crypto, and NUL-terminated strings. It's assembled and verified offline in **[machin-whatsapp](https://github.com/javimosch/machin-whatsapp)**, whose end-to-end self-test runs a message through the whole pipeline (`plaintext → protobuf → Signal ratchet → WhatsApp stanza → Noise transport →` and back).
+
+The five layers, each a standalone pure-MFL library pulled from the real protocol sources ([whatsmeow](https://github.com/tulir/whatsmeow), [libsignal](https://github.com/tulir/libsignal-protocol-go)):
+
+| layer | tool | drove into machin |
+|---|---|---|
+| transport | [machin-noise](https://github.com/javimosch/machin-noise) — Noise XX handshake | (composes the crypto builtins) |
+| framing | [machin-wabin](https://github.com/javimosch/machin-wabin) — WhatsApp stanza codec | (pure MFL over `bytes`) |
+| body | [machin-protobuf](https://github.com/javimosch/machin-protobuf) — protobuf codec | (pure MFL over `bytes`) |
+| messages | [machin-signal](https://github.com/javimosch/machin-signal) — Signal Double Ratchet | (libsignal-exact key schedule) |
+| pairing | [machin-wapair](https://github.com/javimosch/machin-wapair) — ADV pairing crypto | **`xeddsa_sign`/`xeddsa_verify`** |
+
+Getting there grew the language itself: **`bytes`** (v0.34) → the **crypto suite** (v0.35) → **binary WebSocket** frames (v0.36) → **declarable `bytes`** (v0.37) → **XEdDSA** (v0.38). It stops at the live connection on purpose — wiring an unofficial client to WhatsApp's servers risks an account ban — so everything is verified offline by loopback/round-trip.
+
 ## In the machin repo
 
 - **[`framework/`](https://github.com/javimosch/machin/tree/main/framework)** — reusable MFL modules: `machweb` (a web framework — router, response builders, JSON) and `flags.src` (a CLI flag parser), each composed ahead of your app with `machin encode`.
