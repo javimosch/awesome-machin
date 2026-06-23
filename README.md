@@ -30,6 +30,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-date](https://github.com/javimosch/machin-date)** — a `date(1)`-style timestamp formatter (output matches GNU `date`). Drove **`time_format`** (strftime over a Unix timestamp) into machin.
 - **[machin-meet](https://github.com/javimosch/machin-meet)** — a minimal self-hostable **Calendly for one person**: a single binary (HTTP + SQLite + embedded booking page) serving free slots, `.ics` files, and signed manage/cancel links. Drove **`time_make`** (build a Unix timestamp from calendar fields) into machin, completing the time trio.
 - **[machin-qs](https://github.com/javimosch/machin-qs)** — a URL query-string ⇄ JSON converter (decode to a JSON object, or build a percent-encoded query from `key=value` pairs). Drove **`url_encode`/`url_decode`** (RFC 3986 percent-encoding) into machin.
+- **[machin-protobuf](https://github.com/javimosch/machin-protobuf)** — a protobuf wire-format inspector (`protoc --decode_raw`-style) + reusable codec library, implemented in pure MFL over the **`bytes`** type. Exercises machin's binary surface (bytes + crypto + binary WebSocket) built out for a native WhatsApp client.
 
 ## In the machin repo
 
