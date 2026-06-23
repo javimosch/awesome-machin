@@ -31,6 +31,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-meet](https://github.com/javimosch/machin-meet)** — a minimal self-hostable **Calendly for one person**: a single binary (HTTP + SQLite + embedded booking page) serving free slots, `.ics` files, and signed manage/cancel links. Drove **`time_make`** (build a Unix timestamp from calendar fields) into machin, completing the time trio.
 - **[machin-qs](https://github.com/javimosch/machin-qs)** — a URL query-string ⇄ JSON converter (decode to a JSON object, or build a percent-encoded query from `key=value` pairs). Drove **`url_encode`/`url_decode`** (RFC 3986 percent-encoding) into machin.
 - **[machin-protobuf](https://github.com/javimosch/machin-protobuf)** — a protobuf wire-format inspector (`protoc --decode_raw`-style) + reusable codec library, implemented in pure MFL over the **`bytes`** type. Exercises machin's binary surface (bytes + crypto + binary WebSocket) built out for a native WhatsApp client.
+- **[machin-noise](https://github.com/javimosch/machin-noise)** — a [Noise Protocol](https://noiseprotocol.org) **XX handshake** (`Noise_XX_25519_AESGCM_SHA256`, the pattern WhatsApp uses) in pure MFL over the `bytes` + crypto builtins, with a loopback self-test. The transport-encryption layer for a native WhatsApp client.
 
 ## In the machin repo
 
