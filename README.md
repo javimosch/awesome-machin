@@ -28,6 +28,7 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 - **[machin-kv](https://github.com/javimosch/machin-kv)** — a persistent key-value store (set/get/del/list), data surviving across runs. Drove **SQLite** builtins (`sqlite_open`/`exec`/`query`/`close`) into machin.
 - **[machin-cron](https://github.com/javimosch/machin-cron)** — a cron-expression evaluator: prints the next N times a crontab line fires. Drove **`time_fields`** (decompose a Unix timestamp into calendar fields) into machin.
 - **[machin-date](https://github.com/javimosch/machin-date)** — a `date(1)`-style timestamp formatter (output matches GNU `date`). Drove **`time_format`** (strftime over a Unix timestamp) into machin.
+- **[machin-meet](https://github.com/javimosch/machin-meet)** — a minimal self-hostable **Calendly for one person**: a single binary (HTTP + SQLite + embedded booking page) serving free slots, `.ics` files, and signed manage/cancel links. Drove **`time_make`** (build a Unix timestamp from calendar fields) into machin, completing the time trio.
 
 ## In the machin repo
 
