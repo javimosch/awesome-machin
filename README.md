@@ -10,6 +10,10 @@ A curated list of things built with **[machin](https://github.com/javimosch/mach
 
 > Organized by domain: **CLI tools & services**, **Game dev**, **Web**, **Crypto & protocols**. New repos follow a domain-scoped naming convention — `machin-game-demo-*` for games/graphics, `machin-web-demo-*` for web.
 
+## Learning & reference
+
+- **[machin-learn](https://github.com/javimosch/machin-learn)** — a **knowledge base for agents** learning MFL: seven skill files covering the language, builtins, gotchas/pitfalls, terminal/TUI, networking, storage/SQLite, and C FFI. Each skill is a self-contained `.md` an agent can load in one `read` call, with concrete examples and warnings for every caveat — designed to help budget models master machin fast.
+
 ## CLI tools & services
 
 - **[boilerplate-cli-ui-machin](https://github.com/javimosch/boilerplate-cli-ui-machin)** — a single-binary CLI serving an embedded React web UI + JSON API, with a background daemon via the C FFI. The machin entry in the [SuperCLI](https://github.com/javimosch) boilerplate family (smallest binary at ~27 KB).
